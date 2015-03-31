@@ -1,0 +1,7 @@
+Weddriver working principle
+
+1. WebDriver 启动目标浏览器，并绑定到指定端口。该启动的浏览器实例，做为web driver的remote server。
+
+2. Client 端通过CommandExcuter 发送HTTPRequest 给remote server 的侦听端口（通信协议： the webriver wire protocol）
+
+3. Remote server 需要依赖原生的浏览器组件（如：IEDriver.dll,chromedriver.exe），来转化转化浏览器的native调用。
