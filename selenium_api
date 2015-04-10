@@ -1,0 +1,10 @@
+命令行执行：command.CommandExecutor对象用于执行命令
+command_executor - The command.CommandExecutor object used to execute commands.
+异常处理：errorhandler.ErrorHandler 对象用于确保服务器不返回error
+error_handler - errorhandler.ErrorHandler object used to verify that the server did not return an error.
+session_id:session ID 通过每个命令发送
+session_id - The session ID to send with every command.
+capabilities:基本的浏览器功能字典，session的实例化
+capabilities - A dictionary of capabilities of the underlying browser for this instance’s session.
+代理：selenium.webdriver.comon.proxy.Proxy 对象，为这个浏览器指定一个代理
+proxy - A selenium.webdriver.common.proxy.Proxy object, to specify a proxy for the browser to use
