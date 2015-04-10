@@ -36,3 +36,58 @@ delete_all_cookies()
 	Usage:driver.delete_all_cookies()
 delete_cookie(name)
 	Deletes a single cookie with the given name
+	Usage:driver.delete_cookie(‘my_cookie’)
+desired_capabilities
+	returns the drivers current desired capabilities being used
+execute(driver_command, params=None)
+	Sends a command to be executed by a command.CommandExecutor.
+		driver_command: The name of the command to execute as a string.
+		params: A dictionary of named parameters to send with the command.
+	returns:The command’s JSON response loaded into a dictionary object.
+execute_async_script(script, *args)
+	Asynchronously Executes JavaScript in the current window/frame.
+		script: The JavaScript to execute.
+		*args: Any applicable arguments for your JavaScript.
+	Usage:driver.execute_async_script(‘document.title’)
+execute_script(script, *args)
+	Synchronously Executes JavaScript in the current window/frame.
+		script: The JavaScript to execute.
+		*args: Any applicable arguments for your JavaScript.
+find_element(by='id', value=None)
+	‘Private’ method used by the find_element_by_* methods.
+	Usage:Use the corresponding find_element_by_* instead of this.
+	Return type:WebElement
+find_element_by_class_name(name)[source]
+	Finds an element by class name.
+		name: The class name of the element to find.
+	Usage:driver.find_element_by_class_name(‘foo’)
+find_element_by_css_selector(css_selector)
+	Finds an element by css selector.
+		css_selector: The css selector to use when finding elements.
+	Usage:driver.find_element_by_css_selector(‘#foo’)
+find_element_by_id(id_)
+	Finds an element by id.
+		id_ - The id of the element to be found.
+	Usage:driver.find_element_by_id(‘foo’)
+find_element_by_link_text(link_text)
+	Finds an element by link text.
+		link_text: The text of the element to be found.
+	Usage:driver.find_element_by_link_text(‘Sign In’)
+find_element_by_name(name)
+	Findsan element by name.
+		name: The name of the element to find.
+	Usage:driver.find_element_by_name(‘foo’)
+find_element_by_partial_link_text(link_text)
+	Finds an element by a partial match of its link text.
+		link_text: The text of the element to partially match on.
+	driver.find_element_by_partial_link_text(‘Sign’)
+find_element_by_tag_name(name)
+	Finds an element by tag name.
+		name: The tag name of the element to find.
+	Usage:driver.find_element_by_tag_name(‘foo’)
+find_element_by_xpath(xpath)
+	Finds an element by xpath.
+		xpath - The xpath locator of the element to find.
+	Usage:driver.find_element_by_xpath(‘//div/td[1]’)
+find_elements(by='id', value=None)
+
