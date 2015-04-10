@@ -1,3 +1,5 @@
+Reference url:http://selenium.googlecode.com/git/docs/api/py/webdriver_remote/selenium.webdriver.remote.webdriver.html#module-selenium.webdriver.remote.webdriver
+Attributes(属性)
 命令行执行：command.CommandExecutor对象用于执行命令
 command_executor - The command.CommandExecutor object used to execute commands.
 异常处理：errorhandler.ErrorHandler 对象用于确保服务器不返回error
@@ -8,3 +10,29 @@ capabilities:基本的浏览器功能字典，session的实例化
 capabilities - A dictionary of capabilities of the underlying browser for this instance’s session.
 代理：selenium.webdriver.comon.proxy.Proxy 对象，为这个浏览器指定一个代理
 proxy - A selenium.webdriver.common.proxy.Proxy object, to specify a proxy for the browser to use
+
+
+add_cookie(cookie_dict)
+	Adds a cookie to your current session.
+	cookie_dict：A dictionary object, with required keys - “name” and “value”;
+				optional keys - “path”, “domain”, “secure”, “expiry”
+	Usage：driver.add_cookie({‘name’ : ‘foo’, ‘value’ : ‘bar’})
+			driver.add_cookie({‘name’ : ‘foo’, ‘value’ : ‘bar’, ‘path’ : ‘/’}) 
+			driver.add_cookie({‘name’ : ‘foo’, ‘value’ : ‘bar’, ‘path’ : ‘/’, ‘secure’:True})
+back()
+	Usage:driver.back()
+close()
+	Usage:driver.close()
+create_web_element(element_id)
+	Creates a web element with the specified element_id.
+current_url
+	Gets the URL of the current page.
+	Usage:driver.current_url
+current_window_handle
+	Returns the handle of the current window.
+	Usage:driver.current_window_handle
+delete_all_cookies()
+	Delete all cookies in the scope of the session.
+	Usage:driver.delete_all_cookies()
+delete_cookie(name)
+	Deletes a single cookie with the given name
