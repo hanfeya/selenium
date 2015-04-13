@@ -72,15 +72,15 @@ find_element_by_id(id_)
 find_element_by_link_text(link_text)
 	Finds an element by link text.
 		link_text: The text of the element to be found.
-	Usage:driver.find_element_by_link_text(‘Sign In’)
+	Usage: driver.find_element_by_link_text(‘Sign In’)
 find_element_by_name(name)
 	Findsan element by name.
 		name: The name of the element to find.
-	Usage:driver.find_element_by_name(‘foo’)
+	Usage: driver.find_element_by_name(‘foo’)
 find_element_by_partial_link_text(link_text)
 	Finds an element by a partial match of its link text.
 		link_text: The text of the element to partially match on.
-	driver.find_element_by_partial_link_text(‘Sign’)
+	Usage: driver.find_element_by_partial_link_text(‘Sign’)
 find_element_by_tag_name(name)
 	Finds an element by tag name.
 		name: The tag name of the element to find.
@@ -88,6 +88,128 @@ find_element_by_tag_name(name)
 find_element_by_xpath(xpath)
 	Finds an element by xpath.
 		xpath - The xpath locator of the element to find.
-	Usage:driver.find_element_by_xpath(‘//div/td[1]’)
+	Usage: driver.find_element_by_xpath(‘//div/td[1]’)
 find_elements(by='id', value=None)
+	‘Private’ method used by the find_elements_by_* methods.
+	Usage:Use the corresponding find_elements_by_* instead of this.
+find_elements_by_class_name(name)
+	Finds elements by class name
+		name:The class name of the elements to find.
+	Usage: driver.find_elements_by_class_name(‘foo’)
+find_elements_by_css_selector(css_selector)
+	Finds elements by css selector.
+		Finds elements by css selector.
+	Usage: driver.find_elements_by_css_selector(‘.foo’)
+find_elements_by_id(id_)
+	Finds multiple elements by id.
+		id_:The id of the elements to be found
+	Usage: driver.find_element_by_id(‘foo’)
+find_elements_by_link_text(text)
+	Finds elements by link text
+		link_text: The text of the elements to be found
+	Usage: driver.find_elements_by_link_text(‘Sign In’)
+find_elements_by_name(name)
+	Finds elements by name.
+		name: The name of the elements to find.
+	Usage: driver.find_elements_by_name(‘foo’)
+find_elements_by_partial_link_text(link_text)
+	Finds elements by a partial match of their link text.
+		link_text: The text of the element to partial match on
+	Usage: driver.find_element_by_partial_link_text(‘Sign’)
+find_elements_by_tag_name(name)
+	Finds elements by tag name.
+		name: The tag name the use when finding elements.
+	Usage: driver.find_elements_by_tag_name(‘foo’)
+find_elements_by_xpath(xpath)
+	Finds multiple elements by xpath.
+		xpath:The xpath locator of the elements to be found.
+	Usage: driver.find_elements_by_xpath(“//div[contains(@class, ‘foo’)]”)
+forward()
+	Usage: driver.forward()
+get(url)
+	Loads a web page in the current browser session
+get_cookie(name)
+	Get a single cookie by name. Returns the cookie if found, None if not.
+	Usage: driver.get_cookie(‘my_cookie’)
+get_cookies()
+	Returns a set of dictionaries, corresponding to cookies visible in the current session.
+	Usage: driver.get_cookies()
+get_log(log_type
+	Gets the log for a given log type
+		log_type: type of log that which will be returned
+	Usage:  driver.get_log(‘browser’) 
+		driver.get_log(‘driver’) 
+		driver.get_log(‘client’) 
+		driver.get_log(‘server’)
+get_screenshot_as_base64()
+	Gets the screenshot of the current window as a base64 encoded string
+    	which is useful in embedded images in HTML. 
+    	Usage: driver.get_screenshot_as_base64()
+get_screenshot_as_file(filename)
+	Gets the screenshot of the current window. Returns False if there is any IOError, else returns True. Use full paths in your filename. 
+		filename: The full path you wish to save your screenshot to
+	Usage: driver.get_screenshot_as_file(‘/Screenshots/foo.png’)
+get_screenshot_as_png()
+	Gets the screenshot of the current window as a binary data.
+	Usage: driver.get_screenshot_as_png()
+get_window_position(windowHandle='current')
+	Gets the x,y position of the current window.
+	Usage: driver.get_window_position()
+get_window_size(windowHandle='current')
+	Gets the width and height of the current window.
+	Usage: driver.get_window_size()
+implicitly_wait(time_to_wait)
+	Sets a sticky timeout to implicitly wait for an element to be found,
+    	or a command to complete. This method only needs to be called one time per session. To set the timeout for calls to execute_async_script, see set_script_timeout. 
+		time_to_wait: Amount of time to wait (in seconds)
+	Usage: driver.implicitly_wait(30)
+log_types
+	Gets a list of the available log types
+	Usage: driver.log_types
+maximize_window()
+	Maximizes the current window that webdriver is using
 
+Mobile
+
+name
+	Returns the name of the underlying browser for this instance.
+	Usage: driver.name
+orientation
+	Gets the current orientation of the device
+	Usage:Gets the current orientation of the device
+page_source
+	Gets the source of the current page.
+	Usage: driver.page_source
+quit()
+	Quits the driver and closes every associated window.
+	Usage: driver.quit()
+refresh()
+	Refreshes the current page.
+	Usage: driver.refresh()
+save_screenshot(filename)
+	Gets the screenshot of the current window. Returns False if there is
+    	any IOError, else returns True. Use full paths in your filename. 
+		filename: The full path you wish to save your screenshot to.
+	Usage: driver.get_screenshot_as_file(‘/Screenshots/foo.png’)
+set_page_load_timeout(time_to_wait)
+	Set the amount of time to wait for a page load to complete
+    	before throwing an error.
+		time_to_wait: The amount of time to wait
+    	Usage: driver.set_page_load_timeout(30)
+set_script_timeout(time_to_wait)
+ 	Set the amount of time that the script should wait during an 
+ 	execute_async_script call before throwing an error.
+		time_to_wait: The amount of time to wait (in seconds)
+	Usage: driver.set_script_timeout(30)
+set_window_position(x, y, windowHandle='current')
+	Sets the x,y position of the current window. (window.moveTo)
+		x: the x-coordinate in pixels to set the window position
+		y: the y-coordinate in pixels to set the window position
+	Usage: driver.set_window_position(0,0)
+set_window_size(width, height, windowHandle='current')
+	Sets the width and height of the current window. (window.resizeTo)
+		width: the width in pixels to set the window to
+		height: the height in pixels to set the window to
+	Usage: driver.set_window_size(800,600)
+	
+    		
