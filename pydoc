@@ -1,0 +1,5 @@
+查看pydoc方法
+终端运行python -m pydoc -p 1234命令
+浏览器打开http://localhost:1234/
+即可查案已经安装的所有python包
+
